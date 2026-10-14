@@ -1,0 +1,25 @@
+information: 
+
+republicanpartyofyellcountyark@Gmail.com
+PW:Yellcounty01
+
+GitHub account: 
+username: republicanpartyofyellcountyark@gmail.com
+password: 
+
+
+Super User Website:
+admin
+Password
+
+simple business website for the republican party of yell county Arkansas.  This will  be a hub  for idenfity when and where
+the next meetings will be held.  this is a free  hosting that will need to be reinstated everyry three months so that the free listing stays free and working.  
+
+Hosting site: 
+pythonanywhere.com 
+ ** this site requires clicking "RENEW" button every three months vis the Email reminder (republicanpartyofyellcountyark@Gmail.com) **
+
+
+Project = entire website
+App = one section of the website
+   

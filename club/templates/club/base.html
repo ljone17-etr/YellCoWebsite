@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Republican Party of Yell County</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #b22222;
+            color: white;
+            padding: 15px 40px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: white;
+        }
+
+.nav-button {
+    background-color: white;
+    color: #b22222;
+    padding: 6px 12px;
+    margin-left: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    border: 1px solid #dddddd;
+}
+
+.nav-button:hover {
+background-color: rgba(215, 194, 7, 0.963);
+color: #b22222;
+}
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo-area">
+            <img src="{% static 'club/images/fbcircle.jpg' %}" alt="Republican Party Logo">
+
+            <div>
+                <h2>Republican Club</h2>
+                <p>Yell County, Arkansas</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="/" class="nav-button">Home</a>
+            <a href="/finance/" class="nav-button">Finance</a>
+            <a href="/old-business/" class="nav-button">Old Business</a>
+            <a href="/admin/" class="nav-button">Administration Login</a>
+            
+        </nav>
+
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer>
+    Republican Party Club of Yell County
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+
+{% extends "club/base.html" %}
+
+{% block content %}
+
+<h1>Old Business</h1>
+
+<p>
+    Previous club meetings and business conducted by the club.
+</p>
+
+{% if past_meetings %}
+
+    {% for meeting in past_meetings %}
+
+        <div class="meeting-card">
+
+            <h2>{{ meeting.title }}</h2>
+
+            <p>
+                <strong>Date:</strong>
+                {{ meeting.date_time }}
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                {{ meeting.location }}
+            </p>
+
+            <p>
+                <strong>Agenda:</strong>
+                {{ meeting.agenda }}
+            </p>
+
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No past meetings available.</p>
+
+{% endif %}
+
+{% endblock %}

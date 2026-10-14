@@ -1,0 +1,81 @@
+{% extends 'club/base.html' %}
+
+{% block content %}
+<h1>Welcome to the Republican Party of Yell County Arkansas</h1>
+
+<strong style="display:block; margin-top:30px; margin-bottom:10px; font-size:1.1em; text-align:center;">
+<h2>Our Club Values</h2>
+</strong>
+
+{% for value in values %}
+<div>
+    <h3>{{ value.title }}</h3>
+    <p>{{ value.description }}</p>
+
+</div>
+
+{% empty %}
+<p>
+The Yell County Republican Committee is an official county committee. 
+We are committed to upholding the values and principles that guide our party
+and our community. Our club is dedicated to promoting these principles through
+active engagement, education, and participation in local governance.
+</p>
+
+<strong style="display:block; margin-top:30px; margin-bottom:10px; font-size:1.1em; text-align:center;">
+Principles of the Republican Party of Arkansas:
+</strong>
+ 
+<ul style="font-size:0.9em; line-height:1.6;">
+<li>The power of faith in God Almighty and one's right to personal prayer and collective worship</li>
+<li>The sanctity of life</li>
+<li>Individual responsibility and initiative</li>
+<li>Individual freedom and liberty secured by a limited government</li>
+<li>Private property</li>
+<li>Lower taxes to produce economic growth</li>
+<li>Strong national defense</li>
+<li>The personal right to own and bear arms</li>
+<li>The equal and just enforcement of the law</li>
+<li>Separate and independent branches of government</li>
+</ul>
+ 
+</div>
+
+{% endfor %}
+
+
+<h2>Upcoming Meetings</h2>
+
+{% for meeting in meetings %}
+<div>
+    <h3>{{ meeting.title }}</h3>
+    <p>{{ meeting.date_time }}</p>
+    <p>{{ meeting.location }}</p>
+
+    <div style="max-width: 600px;">
+    {{ meeting.agenda|linebreaks }}
+
+
+    <!-- TODO:
+Added meeting image support on 10/13/2026.
+Uses meeting.meeting_image. (( use for fylers and images for meetings ))
+If image is broken, check MEDIA_URL and urls.py configuration.
+-->
+
+
+{% if meeting.meeting_image %}
+    <img
+        src="{{ meeting.meeting_image.url }}"
+        alt="{{ meeting.title }}"
+        style="max-width: 300px; height: auto; margin-top: 15px;"
+    >
+{% endif %}   
+    
+</div>
+
+{% empty %}
+<p>No upcoming meetings at this time. Please check back later for updates.</p>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+
+Yell Co Website 
+
+pwershell: 
+"C:\Users\Lauren\OneDrive\Desktop\Django\YellCoWebiste"
+cd "$env:OneDrive\Desktop\Django\YellCoWebsite"
+
+.\venv\Scripts\activate
+
+python manage.py runserver
+----------------------------------------
+
+
+http://127.0.0.1:8000/admin
+
+---------------------------------------
