@@ -43,8 +43,11 @@ Principles of the Republican Party of Arkansas:
 
 {% endfor %}
 
+<div style="margin-left: 40px;">
 
-<h2>Upcoming Meetings</h2>
+
+<h2 style="margin-bottom: 10px;">Upcoming Meetings</h2>
+
 
 {% for meeting in meetings %}
 <div>
@@ -55,11 +58,23 @@ Principles of the Republican Party of Arkansas:
     <div style="max-width: 600px;">
     {{ meeting.agenda|linebreaks }}
 
-
     <!-- TODO:
 Added meeting image support on 10/13/2026.
 Uses meeting.meeting_image. (( use for fylers and images for meetings ))
 If image is broken, check MEDIA_URL and urls.py configuration.
+
+SHOULD look like: 
+
+Upcoming Meetings
+
+Meeting Title
+Date
+Location
+Agenda
+
+[Meeting Image] #new
+
+Meeting File: View Meeting Document #new
 -->
 
 
@@ -69,13 +84,24 @@ If image is broken, check MEDIA_URL and urls.py configuration.
         alt="{{ meeting.title }}"
         style="max-width: 300px; height: auto; margin-top: 15px;"
     >
-{% endif %}   
-    
+{% endif %}  
+
+{% if meeting.meeting_file %}
+    <p style="margin-top: 15px;">
+        <strong>Meeting File:</strong>
+        <a href="{{ meeting.meeting_file.url }}" target="_blank">
+            View Meeting Document
+        </a>
+    </p>
+{% endif %}
+
+
 </div>
 
 {% empty %}
-<p>No upcoming meetings at this time. Please check back later for updates.</p>
-
+    <p>No upcoming meetings at this time. Please check back later for updates.</p>
 {% endfor %}
+
+</div>
 
 {% endblock %}

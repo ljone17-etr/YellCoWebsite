@@ -1,16 +1,16 @@
 from pathlib import Path
 
+import os
+
+from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(BASE_DIR / ".env")
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3ca04h#d0uk2)sw()fdd#&%6bv9*jxtb)etsk!qgls+yxs%lbo'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -120,3 +120,5 @@ MAILERS = {
 # Django uses MEDIA_ROOT to store uploaded files and MEDIA_URL to serve them. You can configure these settings in your Django project's settings.py file.
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+

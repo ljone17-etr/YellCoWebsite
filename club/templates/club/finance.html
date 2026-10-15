@@ -13,21 +13,45 @@
         We provide summaries of club finances, fundraising activities, and expenditures.
     </p>
 
-    <h2>Current Financial Summary</h2>
+<h2 style="margin-bottom: 35px;">Financial Reports</h2>
 
-    <ul style="line-height:1.8;">
-        <li><strong>Current Balance:</strong> $0.00</li>
-        <li><strong>Total Donations:</strong> $0.00</li>
-        <li><strong>Total Expenses:</strong> $0.00</li>
-    </ul>
+{% for report in reports %}
 
-    <br>
+    <div style="margin-bottom: 30px;">
 
-    <h2>Financial Reports</h2>
+        <h3>{{ report.title }}</h3>
+
+        <p>
+            <strong>Report Date:</strong>
+            {{ report.report_date }}
+        </p>
+
+        <p>
+            <strong>Total Income:</strong>
+            ${{ report.total_income }}
+        </p>
+
+        <p>
+            <strong>Total Expenses:</strong>
+            ${{ report.total_expenses }}
+        </p>
+
+        <p>
+            <strong>Summary:</strong><br>
+            {{ report.summary|linebreaks }}
+        </p>
+
+    </div>
+
+    <hr>
+
+{% empty %}
 
     <p>
         Financial reports will be posted here as they become available.
     </p>
+
+{% endfor %}
 
     <br>
 

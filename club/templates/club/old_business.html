@@ -6,43 +6,110 @@
 
 <h1>Old Business</h1>
 
-<p>
+
+<p style="margin-bottom: 40px;">
     Previous club meetings and business conducted by the club.
 </p>
 
+
+
 {% if past_meetings %}
 
-    {% for meeting in past_meetings %}
+{% for meeting in past_meetings %}
 
-        <div class="meeting-card">
+    <div class="meeting-card">
 
-            <h2>{{ meeting.title }}</h2>
+        <h2>{{ meeting.title }}</h2>
 
+        <p>
+            <strong>Date:</strong>
+            {{ meeting.date_time }}
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            {{ meeting.location }}
+        </p>
+
+        <p>
+            <strong>Agenda:</strong>
+            {{ meeting.agenda }}
+        </p>
+
+        {% if meeting.meeting_image %}
+            <div class="meeting-image">
+                <img
+                    src="{{ meeting.meeting_image.url }}"
+                    alt="{{ meeting.title }}"
+                    style="max-width: 500px; width: 100%; height: auto;"
+                >
+            </div>
+        {% endif %}
+
+        {% if meeting.meeting_file %}
             <p>
-                <strong>Date:</strong>
-                {{ meeting.date_time }}
+                <strong>Meeting File:</strong>
+                <a href="{{ meeting.meeting_file.url }}" target="_blank">
+                    View Meeting Document
+                </a>
             </p>
+        {% endif %}
 
-            <p>
-                <strong>Location:</strong>
-                {{ meeting.location }}
-            </p>
+    </div>
 
-            <p>
-                <strong>Agenda:</strong>
-                {{ meeting.agenda }}
-            </p>
+    <hr>
 
-        </div>
-
-        <hr>
-
-    {% endfor %}
-
+{% endfor %}
+`
 {% else %}
-
     <p>No past meetings available.</p>
 
 {% endif %}
 
-{% endblock %}
+<div style="margin-top: 60px;">
+
+    <h2 style="margin-bottom: 30px;">Past Financial Reports</h2>
+
+    {% if finance_reports %}
+
+        {% for report in finance_reports %}
+
+            <div style="margin-bottom: 40px;">
+
+                <h3>{{ report.title }}</h3>
+
+                <p>
+                    <strong>Report Date:</strong>
+                    {{ report.report_date }}
+                </p>
+
+                <p>
+                    <strong>Total Income:</strong>
+                    ${{ report.total_income }}
+                </p>
+
+                <p>
+                    <strong>Total Expenses:</strong>
+                    ${{ report.total_expenses }}
+                </p>
+
+                <p>
+                    <strong>Summary:</strong><br>
+                    {{ report.summary|linebreaks }}
+                </p>
+
+            </div>
+
+            <hr>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No past financial reports available.</p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}  
