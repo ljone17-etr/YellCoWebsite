@@ -14,3 +14,12 @@ python manage.py runserver
 http://127.0.0.1:8000/admin
 
 ---------------------------------------
+
+Migrations 
+
+create- python manage.py makemigrations
+apply - python manage.py migrate
+
+# update found in club/migrations/ 
+
+-------------------------------------
