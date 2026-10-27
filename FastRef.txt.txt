@@ -1,11 +1,8 @@
+Yell Co Website
 
-Yell Co Website 
+pwershell:
 
-pwershell: 
-"C:\Users\Lauren\OneDrive\Desktop\Django\YellCoWebiste"
-cd "$env:OneDrive\Desktop\Django\YellCoWebsite"
 
-.\venv\Scripts\activate
 
 python manage.py runserver
 ----------------------------------------
@@ -15,11 +12,33 @@ http://127.0.0.1:8000/admin
 
 ---------------------------------------
 
-Migrations 
+Migrations
 
 create- python manage.py makemigrations
 apply - python manage.py migrate
 
-# update found in club/migrations/ 
 
 -------------------------------------
+
+SuperUser:
+ 
+ljone17
+D*********1
+-------------------------------------
+
+
+First time install :
+ PS>
+ cd "C:\Users\ljone17\Desktop\code\YellCoWebsite"
+
+(create a new venv & activate)
+python -m venv venv
+.\venv\Scripts\activate
+
+(intall the reqs!)
+pip install -r requirements.txt
+
+( Run the program in the new venv)
+python manage.py runserver
+
+
