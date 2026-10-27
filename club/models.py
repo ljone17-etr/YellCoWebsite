@@ -31,7 +31,7 @@ class Meeting(django.db.models.Model):
     
 
 #-----------------------
-# Club values represent the core principles and beliefs of the organization. these will dispalh in order. 
+# Club values represent the core principles and beliefs of the organization. these will dispaly in order. 
 #-----------------------
 class ClubValue(django.db.models.Model):
     title = django.db.models.CharField(max_length=100)

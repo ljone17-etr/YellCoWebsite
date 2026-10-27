@@ -2,7 +2,9 @@ Yell Co Website
 
 pwershell:
 
+cd "C:\Users\ljone17\Desktop\code\YellCoWebsite"
 
+.\venv\Scripts\Activate
 
 python manage.py runserver
 ----------------------------------------
@@ -17,6 +19,7 @@ Migrations
 create- python manage.py makemigrations
 apply - python manage.py migrate
 
+# update found in club/migrations/
 
 -------------------------------------
 
