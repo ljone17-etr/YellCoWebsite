@@ -69,12 +69,11 @@ This first section displays officers using larger cards.
             Only display the biography if one
             was entered in Django Admin.
             -->
-            {% if officer.bio %}
 
+            {% if officer.biography %}
                 <div class="officer-bio">
-                    {{ officer.bio|linebreaks }}
+                    {{ officer.biography|linebreaks }}
                 </div>
-
             {% endif %}
 
         </div>
@@ -189,10 +188,20 @@ This first section displays officers using larger cards.
 
             <!-- Display the member's name -->
             <h3>{{ member.full_name }}</h3>
+	    
+	{% if member.position %}
+    	
+	{% endif %}
+	
+
+	{% if member.biography %}
+    	<p>{{ member.biography|linebreaks }}</p>
+{% endif %}
+
 
             <!-- Display the member's position if one exists -->
             {% if member.position %}
-                <p>{{ member.position }}</p>
+                
             {% endif %}
 
         </div>
